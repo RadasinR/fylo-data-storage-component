@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+/* RESET */
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CUSTOME PROPERTIES */
+
+:root {
+  /* colors */
+  --GRADIENT1: hsl(6, 100%, 80%);
+  --GRADIENT2: hsl(335, 100%, 65%);
+  --BAR-BG: linear-gradient(to right,var(--GRADIENT1), var(--GRADIENT2));
+
+  --PALE-BLUE: 243 100% 93%;
+  --GRAYISH-BLUE: 229 7% 55%;
+  --DARK-BLUE: 228 56% 26%;
+  --VERY-DARK-BLUE: 229 57% 11%;
+  --WHITE: 0 100% 100%; 
+  /* typography */
+  --FF: "Ralewat", sans-serif;
+  --FS: 0.875rem;
+  --BOLD: 700;
+  /* data */
+  --BAR-HEIGHT: 15px;
+  --TRACKER-SIZE:  calc(var(--BAR-HEIGHT) * 0.6);
+}
+
+/* GENERAL STYLES */
+
+body {
+  display: flex;
+  align-items: center;
+  background-image: url("/images/bg-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+/* BLOCKS */
+
+.data-storage {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  color: hsl(var(--WHITE));
+  font-size: var(--FS);
+  font-family: var(--FF);
+}
+
+.container {
+  padding: 2.3em;
+}
+
+.data-used {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 2.5em;
+}
+
+.btns-group {
+  margin-top: 2.5em;
+  display: flex;
+  gap: 1rem;
+}
+
+.data__bar {
+  height: var(--BAR-HEIGHT);
+  background-color: hsl(var(--VERY-DARK-BLUE));
+  width: 100%; 
+  content: " ";
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.bar__line {
+  margin-left: 0.1em;
+  height: calc(var(--BAR-HEIGHT) * 0.8);
+  content: "";
+  background-image: var(--BAR-BG);
+  border-radius: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dot {
+  width: var(--TRACKER-SIZE);
+  height: var(--TRACKER-SIZE);
+  background-color: hsl(var(--WHITE));
+  border-radius: 50%;
+  margin-right: 0.1em;
+}
+
+.data__remaining {
+  position: absolute;
+  padding: 0.3em 1em;
+  background-color: hsl(var(--WHITE));
+  text-transform: uppercase;
+  bottom: -25%;
+  left: 25%;
+}
+
+/* ELEMENTS */
+.use-info {
+  color: hsl(var(--WHITE) / 0.6);
+  text-align: center;
+}
+/*MODIFIERS */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.accent--grey {
+  color: hsl(var(--GRAYISH-BLUE));
+  font-weight: var(--BOLD);
+}
+.strong {
+  color: black;
+  font-size: calc(var(--FS) * 3);
+}
+.accent--white {
+  color: hsl(var(--WHITE) / 0.8);
+  font-weight: var(--BOLD);
+}
+
+.round {
+  border-radius: 0.6em;
+}
+
+.round-right-top {
+  border-top-right-radius: 7rem;
+}
+
+.bg--blue {
+  background-color: hsl(var(--DARK-BLUE));
+}
+
+.btn--file {
+  background-color: hsl(var(--VERY-DARK-BLUE));
+  padding: 0.7em;
+  height: 50px; 
+  width: 50px;
+}
+
+.btn--file img {
+  margin: 0 auto;
+}
+
+/* UTILITY */
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.flex-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  
+  body {
+    background-color: hsl(var(--VERY-DARK-BLUE));
+    background-image: url('/images/bg-desktop.png');
+    background-size: 100% 50%;
+    background-position: bottom;
+  }
+
+  .data-storage {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+   
+  }
+  .top {
+    flex-basis: 35%;
+    padding: 3.5em;
+  }
+  .use-info {
+    text-align: left;
+  }
+ 
+  .data-used {
+    flex-basis: 50%;
+  }
+ 
+  .data__remaining {
+    position: absolute;
+    padding: 0.3em 1em;
+    background-color: hsl(var(--WHITE));
+    text-transform: uppercase;
+    bottom: auto;
+    top: -30%;
+    left: 60%;
+  }
+
+ .bubble {
+  position: relative;
+ }
+
+ .bubble::after {
+  position: absolute;
+  content: "";
+  border: 20px solid transparent;
+  border-right: 20px solid hsl(var(--WHITE));
+  bottom: -23px;
+  right: -14px;
+ }
+}

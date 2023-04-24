@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Fylo data storage component</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+  </head>
+ 
+  <body>
+    <article class="data-storage">
+      <h2 class="sr-only">Fylo data storage.</h2>
+      <section class="bg--blue container round round-right-top top">
+        <img class="img__logo" src="images/logo.svg" alt="fylo logo" />
+        <div class="btns-group">
+          <button class="btn--file round">
+            <span class="sr-only">Add document</span
+            ><img src="images/icon-document.svg" alt="document" />
+          </button>
+          <button class="btn--file round">
+            <span class="sr-only">Add folder</span
+            ><img src="images/icon-folder.svg" alt="folder" />
+          </button>
+          <button class="btn--file round">
+            <span class="sr-only">Upload files</span
+            ><img src="images/icon-upload.svg" alt="upload" />
+          </button>
+        </div>
+      </section>
+
+      <section class="bg--blue container round data-used">
+        <p class="use-info">You’ve used <output id="usedData" class="accent--white">815 GB</output> of your storage</p>
+       
+        <div class="data__bar">
+          <div class="bar__line">
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="flex-sb accent--white"><div>0 GB</div> 1000 GB</div> 
+        <div class="data__remaining round">
+          <div class="bubble">
+            <p class="flex-center accent--grey"><strong id="leftData" class="strong"></strong> GB Left</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
